@@ -47,11 +47,16 @@ for i in range(height):
             ykey[i], ykey[j] = ykey[j], ykey[i]
             yindex[i], yindex[j] = yindex[j], yindex[i]
 
+# print(yindex)
+
 for i in range(height):
     k = 0
     for j in range(width):
         encryptedImage[i][j] = image[yindex[k]][j]
         k += 1
+
+print(image[70][0])
+print(encryptedImage[0][0])
 
 for i in range(height):
     k = 0
@@ -59,11 +64,14 @@ for i in range(height):
         encryptedImage[i][j] = encryptedImage[i][xindex[k]]
         k += 1
 
+print(image[70][0])
+print(encryptedImage[0][0])
+
 plt.imshow(encryptedImage)
 plt.show()
 
 l = 0
-print(zkey)
+# print(zkey)
 for i in range(height):
     for j in range(width):
         # print(zkey[l])
@@ -74,6 +82,55 @@ for i in range(height):
         # print(encryptedImage[i, j])
         l += 1
         # plt.imshow(encryptedImage)
+
+plt.imshow(encryptedImage)
+plt.show()
+
+
+
+
+decryptedImage = np.zeros(shape=[height, width, 3], dtype=np.uint8)
+
+l = 0
+# print(zkey)
+for i in range(height):
+    for j in range(width):
+        # print(zkey[l])
+        zk = (int((zkey[l]*pow(10, 5))%256))
+        # print(zk)
+        # print(encryptedImage[i, j])
+        decryptedImage[i, j] = encryptedImage[i, j]^zk
+        # print(encryptedImage[i, j])
+        l += 1
+        # plt.imshow(encryptedImage)
+
+plt.imshow(decryptedImage)
+plt.show()
+
+# print(yindex)
+
+for i in range(height):
+    k = 0
+    for j in range(width):
+        encryptedImage[i][xindex[k]] = encryptedImage[i][j]
+        k += 1
+
+print(image[70][0])
+print(encryptedImage[0][0])
+# print(decryptedImage[0][0])
+
+
+for i in range(height):
+    k = 0
+    for j in range(width):
+        encryptedImage[yindex[k]][j] = encryptedImage[i][j]
+        k += 1
+
+print(image[70][0])
+print(encryptedImage[0][0])
+# print(decryptedImage[0][0])
+
+
 
 plt.imshow(encryptedImage)
 plt.show()
