@@ -1,5 +1,3 @@
-
-
 def logistic_key(x, r, size):
     """
     This function accepts the initial x value, 

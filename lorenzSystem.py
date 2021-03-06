@@ -21,11 +21,11 @@ def lorenz_key(xinit, yinit, zinit, num_steps):
         ys[i + 1] = ys[i] + ((xs[i] * (r - zs[i]) - ys[i]) * dt)
         zs[i + 1] = zs[i] + ((xs[i] * ys[i] - b * zs[i]) * dt)
 
-    fig = plt.figure()
-    ax = fig.gca(projection='3d')
+    # fig = plt.figure()
+    # ax = fig.gca(projection='3d')
 
-    ax.plot(xs, ys, zs)
-    plt.show()
+    # ax.plot(xs, ys, zs)
+    # plt.show()
 
     return xs, ys, zs
 # Plotting

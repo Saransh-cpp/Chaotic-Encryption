@@ -27,6 +27,9 @@ l = 0
 for i in range(width):
     xindex.append(i)
 
+# print(xindex)
+# print(xkey)
+
 for i in range(height):
     yindex.append(i)
 
@@ -35,6 +38,8 @@ for i in range(width):
         if xkey[i] > xkey[j]:
             xkey[i], xkey[j] = xkey[j], xkey[i]
             xindex[i], xindex[j] = xindex[j], xindex[i]
+
+# print(xkey)
 
 for i in range(height):
     for j in range(height):
@@ -58,10 +63,11 @@ plt.imshow(encryptedImage)
 plt.show()
 
 l = 0
+print(zkey)
 for i in range(height):
     for j in range(width):
         # print(zkey[l])
-        zk = (int((zkey[l]*pow(10, 12))%256))
+        zk = (int((zkey[l]*pow(10, 5))%256))
         # print(zk)
         # print(encryptedImage[i, j])
         encryptedImage[i, j] = encryptedImage[i, j]^zk
