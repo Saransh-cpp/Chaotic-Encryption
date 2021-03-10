@@ -1,3 +1,11 @@
+"""
+Encrypting an image first by shuffling
+it's pixels and then substituting the 
+shuffled pixels using pseudo-random
+numbersngenerated from Lorenz system
+of differential equations
+"""
+
 # Importing all the required libraries
 import matplotlib.image as img
 import matplotlib.pyplot as plt

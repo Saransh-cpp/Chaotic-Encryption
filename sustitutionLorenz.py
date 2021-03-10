@@ -1,5 +1,5 @@
 """
-Encrypting an image through substitution alogorithm 
+Encrypting an image through substitution algorithm 
 using pseudo-random numbers generated from
 Lorenz system of differential equations
 """
