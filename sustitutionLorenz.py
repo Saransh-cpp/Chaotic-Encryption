@@ -44,7 +44,7 @@ for i in range(height):
 plt.imshow(encryptedImage)
 plt.show()
 
-# Initializing an empty image to store the encrypted image
+# Initializing an empty image to store the decrypted image
 decryptedImage = np.zeros(shape=[height, width, 3], dtype=np.uint8)
 
 # XORing each pixel with the same number it was XORed above above/
