@@ -19,9 +19,7 @@ width = image.shape[1]
 # Using lorenz_key function to generate 3 lists of keys
 xkey, ykey, zkey = key.lorenz_key(0.01, 0.02, 0.03, height*width)
 
-l = 0
-x = []
-y = []
+# Initializing empty index lists to store index of pixels
 xindex = []
 yindex = []
 
@@ -29,46 +27,60 @@ yindex = []
 encryptedImage = np.zeros(shape=[height, width, 3], dtype=np.uint8)
 l = 0
 
+# Populating xindex
 for i in range(width):
     xindex.append(i)
 
+# Populating yindex
 for i in range(height):
     yindex.append(i)
 
+# Re-arranging xindex and xkey to increase randomness
 for i in range(width):
     for j in range(width):
         if xkey[i] > xkey[j]:
             xkey[i], xkey[j] = xkey[j], xkey[i]
             xindex[i], xindex[j] = xindex[j], xindex[i]
 
+# Re-arranging yindex and ykey to increase randomness
 for i in range(height):
     for j in range(height):
         if ykey[i] > ykey[j]:
             ykey[i], ykey[j] = ykey[j], ykey[i]
             yindex[i], yindex[j] = yindex[j], yindex[i]
 
+# Shuffling original image's pixels and storing them
+# in an empty image
 for i in range(height):
     k = 0
     for j in range(width):
         encryptedImage[i][j] = image[yindex[k]][j] 
         k += 1
 
+# Shuffling original image's pixels and storing them
+# in an empty image
 for i in range(height):
     k = 0
     for j in range(width):
         encryptedImage[i][j] = encryptedImage[i][xindex[k]]
         k += 1
 
+# Displaying the shuffled image
 plt.imshow(encryptedImage)
 plt.show()
 
+# XORing each pixel with a pseudo-random number generated above/Performing the 
+# substitution algorithm
 l = 0
 for i in range(height):
     for j in range(width):
+        # Converting the pseudo-random nuber generated into a number between 0 and 255
         zk = (int((zkey[l]*pow(10, 5))%256))
+        # Performing the XOR operation
         encryptedImage[i, j] = encryptedImage[i, j]^zk
         l += 1
 
+# Displaying the shuffled then substituted encrypted image
 plt.imshow(encryptedImage)
 plt.show()
 
