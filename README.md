@@ -16,7 +16,7 @@ The code also aims to connect chaos with fractals which is inspired from [here](
 
 ## Final reports
 ### 1. Report for encryption using Lorenz system of deifferential equations
-The report can be found [here](). 
+The report can be found [here](https://github.com/Saransh-cpp/Chaotic-Encryption/blob/master/Reports/ODE%20Report.pdf). 
 ### 2. Report for chaos with fractals
 The report can be found [here](https://github.com/Saransh-cpp/Chaotic-Encryption/blob/master/Reports/Calc%20Project.pdf). 
 
