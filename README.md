@@ -15,8 +15,8 @@ Here the code first shuffles the pixels of an image using random numbers (one fo
 The code also aims to connect chaos with fractals which is inspired from [here](https://github.com/jonnyhyman/Chaos) 
 
 ## Final reports
-### 1. Report for encryption using Lorenz system of deifferential equations
+### 1. Report for encryption using Lorenz system of differential equations
 The report can be found [here](https://github.com/Saransh-cpp/Chaotic-Encryption/blob/master/Reports/ODE%20Report.pdf). 
-### 2. Report for chaos with fractals
+### 2. Report for encryption using logistic map and then connecting chaos with fractals
 The report can be found [here](https://github.com/Saransh-cpp/Chaotic-Encryption/blob/master/Reports/Calc%20Project.pdf). 
 
